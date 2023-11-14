@@ -1,1 +1,15 @@
-<p>add works!</p>
+<section class="add" [ngClass]="{open : openObservable$ | async}">
+    <div class="container">
+
+        <div (click)="toggleShow()" class="add-button">
+            <p>Add new task</p>
+            <button>+</button>
+        </div>
+
+        <div class="add-input">
+            <label for="todo">New Todo</label>
+            <input type="text" id="todo" [(ngModel)]="todoText">
+            <button (click)="addTodo()" class="save">Save</button>
+        </div>
+    </div>
+</section>
